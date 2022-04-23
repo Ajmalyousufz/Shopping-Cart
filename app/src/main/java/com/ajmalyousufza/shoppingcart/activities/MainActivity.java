@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     CircleImageView profimg;
     TextView category;
 
-//   private ChipNavigationBar chipNavigationBar;
-//
-//   private Fragment fragment = null;
-//   private Toolbar toolbar;
+   private ChipNavigationBar chipNavigationBar;
+
+   private Fragment fragment = null;
+   //private Toolbar toolbar1;
 
    ActionBarDrawerToggle actionBarDrawerToggle;
    MaterialToolbar toolbar ;
@@ -65,34 +65,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.app_name,R.string.app_name);
         actionBarDrawerToggle.syncState();
 
-//        chipNavigationBar = findViewById(R.id.chip_navigation_bar);
-//        toolbar = findViewById(R.id.toolbar);
-//
-//        chipNavigationBar.setItemSelected(R.id.page_2,true);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("ajmal");
-//
-//        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(int i) {
-//                switch (i){
-//                    case R.id.page_1:
-//                        fragment = new StoreFragment();
-//                        break;
-//                    case R.id.page_2:
-//                        fragment = new HomeFragment();
-//                        break;
-//                    case R.id.page_3:
-//                        fragment = new CartFragment();
-//                        break;
-//                }
-//
-//                if(fragment!=null){
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
-//                }
-//            }
-//        });
+        chipNavigationBar = findViewById(R.id.chip_navigation_bar);
+        //toolbar1 = findViewById(R.id.toolbar);
+
+        chipNavigationBar.setItemSelected(R.id.page_2,true);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+        //setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("ajmal");
+
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int i) {
+                switch (i){
+                    case R.id.page_1:
+                        fragment = new StoreFragment();
+                        break;
+                    case R.id.page_2:
+                        fragment = new HomeFragment();
+                        break;
+                    case R.id.page_3:
+                        fragment = new CartFragment();
+                        break;
+                }
+
+                if(fragment!=null){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
+                }
+            }
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
