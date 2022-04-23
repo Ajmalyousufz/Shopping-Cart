@@ -14,6 +14,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ajmalyousufza.shoppingcart.R;
 import com.ajmalyousufza.shoppingcart.fragments.CartFragment;
@@ -22,9 +25,16 @@ import com.ajmalyousufza.shoppingcart.fragments.StoreFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-public class MainActivity extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    NavigationView navigationView;
+    CircleImageView profimg;
+    TextView category;
 
 //   private ChipNavigationBar chipNavigationBar;
 //
@@ -40,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.topAppBar);
         drawerLayout = findViewById(R.id.mainDrawer);
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View header = navigationView.getHeaderView(0);
+        profimg =  header.findViewById(R.id.prof_image);
+        category = header.findViewById(R.id.prof_categories);
+
+        category.setOnClickListener(view -> {
+            Toast.makeText(this, "Category", Toast.LENGTH_SHORT).show();
+        });
 
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.app_name,R.string.app_name);
@@ -81,9 +101,15 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         }
+        if(item.getItemId()==findViewById(R.id.prof_categories).getId()){
+            Toast.makeText(this, "Categories", Toast.LENGTH_SHORT).show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
 
-
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
 }
