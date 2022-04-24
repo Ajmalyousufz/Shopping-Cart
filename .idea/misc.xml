@@ -4,17 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/background_rectangle.xml" value="0.269" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/corner_background.xml" value="0.2" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ctr_bg.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/edittext_box.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/elevation_shadow.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ellipse_shadow.xml" value="0.22" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/gray_rounded_back.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/green_round_back_light.xml" value="0.269" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.269" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ic_custom_star.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1845" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/layout_bg.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/shadow_rounded_backgroud.xml" value="0.269" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/thumb.xml" value="0.1845" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/drawable/thumb_track.xml" value="0.1845" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/layout-v28/drawer_header.xml" value="0.3546875" />
+        <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/layout/activity_item_detailed.xml" value="0.3546875" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/layout/drawer_header.xml" value="0.3546875" />
         <entry key="..\:/Users/Muhammed ajmal y/AndroidStudioProjects/ShoppingCart/app/src/main/res/layout/fragment_cart.xml" value="0.3546875" />

@@ -78,8 +78,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         chipNavigationBar = findViewById(R.id.chip_navigation_bar);
         //toolbar1 = findViewById(R.id.toolbar);
 
-        chipNavigationBar.setItemSelected(R.id.page_2,true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+
+
+        if(getIntent().getStringExtra("where")!=null){
+            if( getIntent().getStringExtra("where").equals("detailedActivity")){
+
+                chipNavigationBar.setItemSelected(R.id.page_3,true);
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,new CartFragment()).commit();
+            };
+        }
+        else {
+            chipNavigationBar.setItemSelected(R.id.page_2,true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+        }
         //setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Hi, "+user_firstName+"!");
 

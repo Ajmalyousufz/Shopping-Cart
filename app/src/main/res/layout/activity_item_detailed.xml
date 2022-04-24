@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ctr_bg"
+    tools:context=".activities.ItemDetailedActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:background="@color/green_light"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.ShoppingCart"
+        android:layout_height="275dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@drawable/ctr_bg"
+            app:contentScrim="@color/green_light"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Lemon Tea">
+
+            <TextView
+                android:id="@+id/teaName"
+                android:text="Lemon Tea"
+                android:textSize="24dp"
+                android:layout_marginTop="132dp"
+                android:layout_marginLeft="29dp"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/teaDesc"
+                android:text="Good Day Time"
+                android:textSize="12dp"
+                android:layout_marginTop="165dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="$"
+                android:textSize="20dp"
+                android:layout_marginTop="195dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/teaPrice"
+                android:text="12.99"
+                android:textSize="50dp"
+                android:layout_marginTop="199dp"
+                android:layout_marginLeft="43dp"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="217dp"
+                android:src="@drawable/design_roung_png"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="-10dp"
+                app:layout_collapseMode="parallax"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:visibility="gone"
+                android:id="@+id/toolbar"
+                android:elevation="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:background="@drawable/layout_bg"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="Particulars"
+                    android:textSize="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/teaParticularDesc"
+                    android:text="@string/particular_decription"
+                    android:textSize="12dp"
+                    android:layout_marginTop="18dp"
+                    android:lineHeight="16.37dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <RatingBar
+                    android:id="@+id/teaRating"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:rating="5"
+                    android:stepSize="0.5"
+                    android:progressTint="@color/purple_700"
+                    android:layout_marginLeft="30dp"
+                    android:numStars="5"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:backgroundTint="#EFF5CA"
+                        app:cardCornerRadius="15dp"
+                        android:layout_height="64dp">
+                        <TextView
+                            android:id="@+id/teaQuantity"
+                            android:text="500ml"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="6dp"
+                            android:textSize="12dp"
+                            android:textColor="#647039"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:layout_marginLeft="12dp"
+                        android:backgroundTint="#EFF5CA"
+                        app:cardCornerRadius="15dp"
+                        android:layout_height="64dp">
+                        <TextView
+                            android:id="@+id/teaIce"
+                            android:text="Less Ice"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="6dp"
+                            android:textSize="12dp"
+                            android:textColor="#647039"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:backgroundTint="#EFF5CA"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_height="64dp">
+                        <TextView
+                            android:id="@+id/teaSugar"
+                            android:text="Sugar"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="6dp"
+                            android:textSize="12dp"
+                            android:textColor="#647039"
+                            android:fontFamily="@font/nunito_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <TextView
+                    android:text="Services"
+                    android:textSize="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/teaServiceDesc"
+                    android:text="@string/particular_decription"
+                    android:textSize="12dp"
+                    android:layout_marginTop="18dp"
+                    android:lineHeight="16.37dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="17dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/teaImage"
+        android:src="@drawable/lemon_tea_large_png"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="end"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="100dp"
+        android:elevation="20dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_width="99dp"
+        android:layout_height="217dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:baselineAligned="true"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/teaCartTime"
+            android:src="@drawable/time_icon"
+            android:layout_width="34dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:layout_height="34dp"/>
+        <ImageView
+            android:id="@+id/teaLike"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            android:backgroundTintMode="src_in"
+            android:layout_width="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_height="40dp"/>
+        <Button
+            android:id="@+id/purchase_button"
+            android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:text="Purchase"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:background="@drawable/corner_background"
+            android:backgroundTint="@color/purple_700"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_marginLeft="28dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

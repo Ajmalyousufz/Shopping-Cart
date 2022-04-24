@@ -1,6 +1,7 @@
 package com.ajmalyousufza.shoppingcart.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.ajmalyousufza.shoppingcart.R;
+import com.ajmalyousufza.shoppingcart.activities.ItemDetailedActivity;
 import com.ajmalyousufza.shoppingcart.adapters.RecommAdapterClass;
 import com.ajmalyousufza.shoppingcart.adapters.WillBuyAdapterClass;
 import com.ajmalyousufza.shoppingcart.modelclasses.RecommModelClass;
@@ -32,6 +34,7 @@ public class HomeFragment extends Fragment {
     ArrayList<RecommModelClass> recommModelClassArrayList;
     RecyclerView recyclerView2;
     RecommAdapterClass recommAdapterClass;
+    RecommAdapterClass.RecyclerViewClickListenerr recyclerViewClickListenerr;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -52,11 +55,22 @@ public class HomeFragment extends Fragment {
 
         recommModelClassArrayList = new ArrayList<>();
         recyclerView2 = view.findViewById(R.id.prod_recyclerview);
-        recommAdapterClass = new RecommAdapterClass(recommModelClassArrayList,context);
+        recommAdapterClass = new RecommAdapterClass(recommModelClassArrayList,context,recyclerViewClickListenerr);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView2.setLayoutManager(linearLayoutManager);
         recyclerView2.setAdapter(recommAdapterClass);
+
+        recyclerViewClickListenerr = new RecommAdapterClass.RecyclerViewClickListenerr() {
+            @Override
+            public void onClick(View view, int position) {
+                if (view == view.findViewById(R.id.recomm_Layout)) {
+                    Intent intent = new Intent(getContext(), ItemDetailedActivity.class);
+                    intent.putExtra("itemName",recommModelClassArrayList.get(position).getRecommName());
+                    startActivity(intent);
+                }
+            }
+        };
 
         loadData();
         loadRecommData();
@@ -67,12 +81,22 @@ public class HomeFragment extends Fragment {
     private void loadRecommData() {
 
 
-        String[] itemNames = {"Lemon Tea","Black Tea","Green Tea","Lemon Tea2","Black Tea2","Green Tea2"};
-        int[] itemImages = {R.drawable.lemon_tea_png,R.drawable.black_tea_png,R.drawable.black_tea_png,R.drawable.lemon_tea_png,R.drawable.black_tea_png,R.drawable.black_tea_png};
+        String[] itemIds            = {"1","2","3","4","5","6"};
+        String[] itemNames          = {"Lemon Tea","Black Tea","Green Tea","Lemon Tea2","Bubble Tea","Purple Tea"};
+           int[] itemImages         = {R.drawable.lemon_tea_png,R.drawable.black_tea_png,R.drawable.black_tea_png,R.drawable.lemon_tea_png,R.drawable.bubble_tea,R.drawable.purple_tea};
+        String[] itemParticularDesc = {getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription)};
+        String[] itemPrice          = {"12.99","15.50","20.00","12.99","56.99","25.99"};
+        String[] itemServiceDesc    = {getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription)};
+        String[] itemQuantity       = {"500ml","500ml","500ml","500ml","500ml","500ml"};
+        String[] itemIce            = {"less Ice","No Ice","No Ice","less Ice","No Ice","No Ice"};
+        String[] itemSugar          = {"Sugar","Sugar","Sugar","Sugar","Sugar","Sugar"};
+        String[] itemRating         = {"5","5","5","5","5","5"};
+        String[] itemDesc           = {"Good day time","Good day time","Good day time","Good day time","Good day time","Happy Hours"};
 
         for (int i=0;i<itemNames.length;i++){
 
-            RecommModelClass recommModelClass = new RecommModelClass("",String.valueOf(itemImages[i]),itemNames[i] );
+            RecommModelClass recommModelClass = new RecommModelClass(itemIds[i], String.valueOf(itemImages[i]),itemNames[i],itemDesc[i],itemParticularDesc[i]
+                    ,itemServiceDesc[i],itemPrice[i],itemQuantity[i],itemIce[i],itemSugar[i],itemRating[i] );
 
             recommModelClassArrayList.add(i,recommModelClass);
         }
