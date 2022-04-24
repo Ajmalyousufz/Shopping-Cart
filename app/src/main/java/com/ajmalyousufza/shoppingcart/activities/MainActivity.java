@@ -9,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -34,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     NavigationView navigationView;
     CircleImageView profimg;
-    TextView category;
+    TextView category,profName;
+    String user_firstName,userLastName;
 
    private ChipNavigationBar chipNavigationBar;
 
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
    //private Toolbar toolbar1;
 
    ActionBarDrawerToggle actionBarDrawerToggle;
+   AppBarLayout appBarLayout;
    MaterialToolbar toolbar ;
    DrawerLayout drawerLayout;
     @Override
@@ -52,10 +56,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = findViewById(R.id.mainDrawer);
         navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+        appBarLayout = findViewById(R.id.appBarLayout);
+
+        user_firstName = "John";
+        userLastName = "Tom";
 
         View header = navigationView.getHeaderView(0);
         profimg =  header.findViewById(R.id.prof_image);
         category = header.findViewById(R.id.prof_categories);
+        profName = header.findViewById(R.id.prof_name);
+        profName.setText(user_firstName+" "+userLastName);
 
         category.setOnClickListener(view -> {
             Toast.makeText(this, "Category", Toast.LENGTH_SHORT).show();
@@ -71,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         chipNavigationBar.setItemSelected(R.id.page_2,true);
         getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
         //setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("ajmal");
+        getSupportActionBar().setTitle("Hi, "+user_firstName+"!");
 
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
@@ -79,12 +89,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (i){
                     case R.id.page_1:
                         fragment = new StoreFragment();
+                        getSupportActionBar().setTitle("");
                         break;
                     case R.id.page_2:
                         fragment = new HomeFragment();
+                        getSupportActionBar().setTitle("Hi "+user_firstName+"!");
                         break;
                     case R.id.page_3:
                         fragment = new CartFragment();
+                        getSupportActionBar().setTitle("");
                         break;
                 }
 

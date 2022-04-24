@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/background_rectangle"
+            android:layout_margin="10dp"
+            android:layout_width="76dp"
+            android:padding="5dp"
+            android:layout_height="70dp"/>
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ellipse_shadow"
+            android:padding="5dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/willbuy_image"
+            android:background="@drawable/background_rectangle"
+            android:backgroundTint="@color/white"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/user_png"
+            android:layout_width="56dp"
+            android:layout_height="50dp"/>
+
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/willbuy_name"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="28dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Bubble Tea"
+        android:textColor="#647039"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/willbuy_desc"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="53dp"
+        android:textSize="12dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Good Day Time"
+        android:textColor="#707070"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="$"
+            android:textSize="16dp"
+            android:textColor="#647039"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/willbuy_price"
+            android:text=" 56"
+            android:textColor="#647039"
+            android:textSize="22sp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

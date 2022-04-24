@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@drawable/background_rectangle"
+                android:layout_width="122dp"
+                android:layout_height="158dp"/>
+            <ImageView
+                android:id="@+id/recomm_image"
+                android:src="@drawable/lemon_tea_png"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/recomm_name"
+                android:text="Lemon Tea"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:layout_marginBottom="15dp"
+                android:textColor="#647039"
+                android:textSize="16dp"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/recomm_tag"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/recomm_tag_png"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
