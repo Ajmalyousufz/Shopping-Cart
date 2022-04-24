@@ -26,11 +26,13 @@ public class ItemDetailedActivity extends AppCompatActivity {
     String itemSugar;
     String itemRating;
     String itemImage;
+    String itemLargeImage;
 
     TextView teaName,teaDisc,teaParticularDesc,teaServiceDesc,teaPrice,teaQuantity,teaIce,teaSugar;
     RatingBar teaRating;
     ImageView teaImage;
     Button purchaseButton;
+    ImageView backBtn;
 
 
     @Override
@@ -49,6 +51,7 @@ public class ItemDetailedActivity extends AppCompatActivity {
          itemSugar          = getIntent().getStringExtra("itemSugar");
          itemRating         = getIntent().getStringExtra("itemRating");
          itemImage          = getIntent().getStringExtra("itemImage");
+         itemLargeImage          = getIntent().getStringExtra("itemLargeImage");
 
          teaName = findViewById(R.id.teaName);
          teaDisc = findViewById(R.id.teaDesc);
@@ -62,6 +65,7 @@ public class ItemDetailedActivity extends AppCompatActivity {
          teaImage = findViewById(R.id.teaImage);
 
          purchaseButton = findViewById(R.id.purchase_button);
+         backBtn = findViewById(R.id.back_btn);
 
          teaName.setText(itemName);
          teaDisc.setText(itemDesc);
@@ -72,7 +76,11 @@ public class ItemDetailedActivity extends AppCompatActivity {
          teaIce.setText(itemIce);
          teaSugar.setText(itemSugar);
          teaRating.setRating(Float.parseFloat(itemRating));
-         teaImage.setImageResource(Integer.parseInt(itemImage));
+         teaImage.setImageResource(Integer.parseInt(itemLargeImage));
+
+         backBtn.setOnClickListener(view -> {
+             finish();
+         });
 
          purchaseButton.setOnClickListener(view -> {
              Intent intent = new Intent(getApplicationContext(), MainActivity.class);

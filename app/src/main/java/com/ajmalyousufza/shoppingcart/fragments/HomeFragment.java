@@ -84,6 +84,7 @@ public class HomeFragment extends Fragment {
         String[] itemIds            = {"1","2","3","4","5","6"};
         String[] itemNames          = {"Lemon Tea","Black Tea","Green Tea","Lemon Tea2","Bubble Tea","Purple Tea"};
            int[] itemImages         = {R.drawable.lemon_tea_png,R.drawable.black_tea_png,R.drawable.black_tea_png,R.drawable.lemon_tea_png,R.drawable.bubble_tea,R.drawable.purple_tea};
+        int[] itemLargeImages            = {R.drawable.lemon_tea_large_png,R.drawable.black_tea_png,R.drawable.black_tea_png,R.drawable.lemon_tea_png,R.drawable.bubble_tea,R.drawable.purple_tea};
         String[] itemParticularDesc = {getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription)};
         String[] itemPrice          = {"12.99","15.50","20.00","12.99","56.99","25.99"};
         String[] itemServiceDesc    = {getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription),getString(R.string.particular_decription)};
@@ -92,11 +93,12 @@ public class HomeFragment extends Fragment {
         String[] itemSugar          = {"Sugar","Sugar","Sugar","Sugar","Sugar","Sugar"};
         String[] itemRating         = {"5","5","5","5","5","5"};
         String[] itemDesc           = {"Good day time","Good day time","Good day time","Good day time","Good day time","Happy Hours"};
+        boolean[] itemCarted        = {true,false,false,false,false,true,true};
 
         for (int i=0;i<itemNames.length;i++){
 
-            RecommModelClass recommModelClass = new RecommModelClass(itemIds[i], String.valueOf(itemImages[i]),itemNames[i],itemDesc[i],itemParticularDesc[i]
-                    ,itemServiceDesc[i],itemPrice[i],itemQuantity[i],itemIce[i],itemSugar[i],itemRating[i] );
+            RecommModelClass recommModelClass = new RecommModelClass(itemIds[i], String.valueOf(itemImages[i]),String.valueOf(itemLargeImages[i]),itemNames[i],itemDesc[i],itemParticularDesc[i]
+                    ,itemServiceDesc[i],itemPrice[i],itemQuantity[i],itemIce[i],itemSugar[i],itemRating[i] ,itemCarted[i]);
 
             recommModelClassArrayList.add(i,recommModelClass);
         }

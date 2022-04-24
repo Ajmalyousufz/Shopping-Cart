@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back_rect"
+            android:background="@drawable/background_rectangle"
+            android:layout_margin="10dp"
+            android:layout_width="76dp"
+            android:padding="5dp"
+            android:layout_height="70dp"/>
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ellipse_shadow"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/willbuy_image"
+            android:background="@drawable/background_rectangle"
+            android:backgroundTint="@color/white"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/user_png"
+            android:layout_width="56dp"
+            android:layout_height="50dp"/>
+
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/willbuy_name"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:text="Bubble Tea"
+        android:textColor="#647039"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/willbuy_name"
+        app:layout_constraintTop_toBottomOf="@+id/willbuy_name"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="$"
+            android:textSize="10dp"
+            android:textColor="#647039"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/willbuy_prices"
+            android:text=" 56"
+            android:textColor="#647039"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="-"
+            android:backgroundTint="@color/white"
+            android:layout_width="40dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="1"
+            android:paddingLeft="3dp"
+            android:textSize="22dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="+"
+            android:backgroundTint="@color/white"
+            android:layout_width="40dp"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            android:shadowColor="@color/white"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

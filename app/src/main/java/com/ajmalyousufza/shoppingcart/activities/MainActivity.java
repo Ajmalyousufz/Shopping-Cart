@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     NavigationView navigationView;
     CircleImageView profimg;
+    ImageView profBackIm;
     TextView category,profName;
     String user_firstName,userLastName;
 
@@ -65,10 +67,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         profimg =  header.findViewById(R.id.prof_image);
         category = header.findViewById(R.id.prof_categories);
         profName = header.findViewById(R.id.prof_name);
+        profBackIm = header.findViewById(R.id.prof_back_img);
         profName.setText(user_firstName+" "+userLastName);
 
         category.setOnClickListener(view -> {
             Toast.makeText(this, "Category", Toast.LENGTH_SHORT).show();
+        });
+        profBackIm.setOnClickListener(view -> {
+            drawerLayout.close();
         });
 
         setSupportActionBar(toolbar);

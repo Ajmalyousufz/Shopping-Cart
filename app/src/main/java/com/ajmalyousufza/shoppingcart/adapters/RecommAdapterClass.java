@@ -88,6 +88,7 @@ public class RecommAdapterClass extends RecyclerView.Adapter<RecommAdapterClass.
                             intent.putExtra("itemId",recommModelClassArrayList.get(position).getRecommId());
                             intent.putExtra("itemName",recommModelClassArrayList.get(position).getRecommName());
                             intent.putExtra("itemImage",recommModelClassArrayList.get(position).getRecommImage());
+                            intent.putExtra("itemLargeImage",recommModelClassArrayList.get(position).getRecommLargeImage());
                             intent.putExtra("itemDesc",recommModelClassArrayList.get(position).getRecommDesc());
                             intent.putExtra("itemParticularDesc",recommModelClassArrayList.get(position).getRecommParticularDesc());
                             intent.putExtra("itemServiceDesc",recommModelClassArrayList.get(position).getRecommServiceDesc());

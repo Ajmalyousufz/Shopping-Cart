@@ -4,6 +4,7 @@ public class RecommModelClass {
 
     String recommId;
     String recommImage;
+    String recommLargeImage;
     String recommName;
     String recommDesc;
     String recommParticularDesc;
@@ -13,10 +14,11 @@ public class RecommModelClass {
     String recommIce;
     String recommSugar;
     String recommRating;
+    boolean recommCarted;
 
-    public RecommModelClass(String recommId, String recommImage, String recommName,
+    public RecommModelClass(String recommId, String recommImage,String recommLargeImage, String recommName,
                             String recommDesc,String recommParticularDesc,
-                            String recommServiceDesc,String recommPrice,String recommQuantity,String recommIce,String recommSugar,String recommRating) {
+                            String recommServiceDesc,String recommPrice,String recommQuantity,String recommIce,String recommSugar,String recommRating,boolean recommCarted) {
         this.recommId = recommId;
         this.recommImage = recommImage;
         this.recommName = recommName;
@@ -28,6 +30,24 @@ public class RecommModelClass {
         this.recommIce = recommIce;
         this.recommSugar = recommSugar;
         this.recommRating = recommRating;
+        this.recommCarted = recommCarted;
+        this.recommLargeImage = recommLargeImage;
+    }
+
+    public String getRecommLargeImage() {
+        return recommLargeImage;
+    }
+
+    public void setRecommLargeImage(String recommLargeImage) {
+        this.recommLargeImage = recommLargeImage;
+    }
+
+    public boolean isRecommCarted() {
+        return recommCarted;
+    }
+
+    public void setRecommCarted(boolean recommCarted) {
+        this.recommCarted = recommCarted;
     }
 
     public String getRecommRating() {

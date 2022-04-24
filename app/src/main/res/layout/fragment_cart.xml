@@ -18,7 +18,6 @@
             android:fontFamily="@font/nunito_sans_bold"
             android:textSize="24dp"
             android:paddingLeft="2dp"
-            android:layout_marginTop="95dp"
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -30,6 +29,87 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/prod_recyclerview"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/corner_background"
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="$"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Total"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textSize="16dp"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="14dp"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:text="56.99"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="14dp"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/next_tv"
+                    android:text="Next"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:textColor="@color/white"
+                    android:gravity="end|center_vertical"
+                    android:layout_weight="1"
+                    android:layout_marginRight="17dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/next_im"
+                    android:background="@drawable/back_button"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:textSize="20dp"
+                    android:rotation="180"
+                    android:layout_marginRight="17dp"
+                    android:gravity="end"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
